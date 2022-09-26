@@ -1,0 +1,26 @@
+/*******************************************************************************
+//
+//
+//
+//  #BODY
+//
+//
+//
+*******************************************************************************/
+
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+@use './src/assets/styles/_settings/_settings.fonts' as fonts;
+
+body {
+    @include mixins.font-size(
+        fonts.$fonts-size-base,
+        fonts.$fonts-line-height-base
+    );
+
+    min-height: 100%;
+    color: var(--color-on-background);
+    font-family: var(--font-inconsolata);
+    background-color: var(--color-background);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

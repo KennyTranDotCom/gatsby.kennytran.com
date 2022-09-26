@@ -1,0 +1,38 @@
+.c-nav-social {
+    ul {
+        margin: 0;
+        list-style: none;
+        display: flex;
+
+        & > li {
+            &:not(:last-child) {
+                margin-right: var(--spacer-sm);
+            }
+        }
+    }
+
+    button {
+        padding: 0;
+        background: none;
+        border: none;
+    }
+
+    svg {
+        fill: var(--color-on-background);
+        transition: fill 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    a,
+    button {
+        &:hover {
+            svg {
+                fill: var(--color-accent);
+            }
+        }
+    }
+
+    [aria-label='LinkedIn'] {
+        position: relative;
+        top: -3px;
+    }
+}

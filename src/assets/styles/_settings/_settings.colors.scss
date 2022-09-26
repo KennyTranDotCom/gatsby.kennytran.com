@@ -1,0 +1,31 @@
+//******************************************************************************
+//
+//
+//
+//  #COLORS
+//
+//
+//
+//******************************************************************************
+
+$colors: (
+    black: #080808,
+    black-light: #101010,
+    blue: #4646fe,
+    grey: #808080,
+    grey-light: #f4f1ec,
+    white: #f1f1f1,
+);
+
+$colors-theme-default: (
+    primary: map-get($colors, black),
+    on-primary: map-get($colors, white),
+    secondary: map-get($colors, black-light),
+    on-secondary: map-get($colors, white),
+    accent: map-get($colors, blue),
+    on-accent: map-get($colors, white),
+    muted: map-get($colors, grey),
+    background: map-get($colors, black),
+    on-background: map-get($colors, white),
+    on-background-border: map-get($colors, grey),
+);

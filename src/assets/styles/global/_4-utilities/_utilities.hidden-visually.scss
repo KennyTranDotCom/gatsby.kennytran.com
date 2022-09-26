@@ -1,0 +1,19 @@
+/*******************************************************************************
+//
+//
+//
+//  #HIDDEN VISUALLY
+//
+//
+//
+*******************************************************************************/
+
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+$hidden-visually: true;
+
+@if $hidden-visually {
+    .u-hidden-visually {
+        @include mixins.hide();
+    }
+}

@@ -1,0 +1,43 @@
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+.c-ticker {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+
+    .c-ticker__slides {
+        display: inline-block;
+        margin: 0;
+        list-style: none;
+    }
+
+    .c-ticker__slide {
+        display: inline-block;
+        padding: 0 20px;
+
+        @include mixins.mq-at-least(md) {
+            padding: 0 40px;
+        }
+
+        & > a {
+            display: grid;
+            place-items: center;
+            width: 100px;
+
+            @include mixins.mq-at-least(md) {
+                width: 160px;
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                padding-bottom: 50%;
+                grid-area: 1 / 1 / 2 / 2;
+            }
+
+            img {
+                grid-area: 1 / 1 / 2 / 2;
+            }
+        }
+    }
+}

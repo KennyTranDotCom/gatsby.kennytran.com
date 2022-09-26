@@ -1,0 +1,68 @@
+/*******************************************************************************
+//
+//
+//
+//  #RATIO
+//
+//
+//
+*******************************************************************************/
+
+@use 'sass:math';
+
+$ratios: (
+    '16by9': (
+        16: 9,
+    ),
+);
+
+.o-ratio,
+%o-ratio {
+    display: block;
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+
+    .o-ratio__content,
+    & > embed,
+    & > iframe,
+    & > object {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    & > img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+
+    /***************************************************************************
+    //
+    //  VARIANTS
+    //
+    ***************************************************************************/
+
+    @each $ratio-name, $ratio-value in $ratios {
+        @each $antecedent, $consequent in $ratio-value {
+            &.-ratio-#{$ratio-name} {
+                &::before {
+                    padding-bottom: (math.div($consequent, $antecedent)) * 100%;
+                }
+            }
+        }
+    }
+}

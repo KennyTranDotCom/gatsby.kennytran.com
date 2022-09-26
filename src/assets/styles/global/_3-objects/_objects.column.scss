@@ -1,0 +1,99 @@
+/*******************************************************************************
+//
+//
+//
+//  #COLUMN
+//
+//
+//
+*******************************************************************************/
+
+@use 'sass:math';
+
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+@use './src/assets/styles/_settings/_settings.grid' as grid;
+
+@mixin column($size: 'xs') {
+    @for $i from 1 through grid.$grid-columns {
+        &.#{$size}\:o-column-#{$i} {
+            flex: 0 0 (math.div(100%, grid.$grid-columns)) * $i;
+            max-width: (math.div(100%, grid.$grid-columns)) * $i;
+        }
+    }
+}
+
+@mixin column-offset($size: 'xs') {
+    @for $i from 0 through grid.$grid-columns {
+        &.#{$size}\:o-column-offset-#{$i} {
+            margin-left: (math.div(100%, grid.$grid-columns)) * $i;
+        }
+    }
+}
+
+@mixin column-pull($size: 'xs') {
+    @for $i from 0 through grid.$grid-columns {
+        $length: (-math.div(100%, grid.$grid-columns)) * $i;
+
+        @if $i == 0 {
+            $length: auto;
+        }
+
+        &.#{$size}\:o-column-pull-#{$i} {
+            margin-left: $length;
+        }
+    }
+}
+
+@mixin column-push($size: 'xs') {
+    @for $i from 0 through grid.$grid-columns {
+        $length: (math.div(100%, grid.$grid-columns)) * $i;
+
+        @if $i == 0 {
+            $length: auto;
+        }
+
+        &.#{$size}\:o-column-push-#{$i} {
+            margin-left: $length;
+        }
+    }
+}
+
+.o-column {
+    width: 100%;
+    min-height: 1px; // Prevent collapsing
+    position: relative;
+    padding-left: math.div(grid.$grid-gap, 2);
+    padding-right: math.div(grid.$grid-gap, 2);
+
+    @if grid.$grid-column {
+        @each $grid-column-breakpoint in grid.$grid-column-breakpoints {
+            @include mixins.mq-at-least($grid-column-breakpoint) {
+                @include column($grid-column-breakpoint);
+            }
+        }
+    }
+
+    @if grid.$grid-offset {
+        @each $grid-offset-breakpoint in grid.$grid-offset-breakpoints {
+            @include mixins.mq-at-least($grid-offset-breakpoint) {
+                @include column-offset($grid-offset-breakpoint);
+            }
+        }
+    }
+
+    @if grid.$grid-pull {
+        @each $grid-pull-breakpoint in grid.$grid-pull-breakpoints {
+            @include mixins.mq-at-least($grid-pull-breakpoint) {
+                @include column-pull($grid-pull-breakpoint);
+            }
+        }
+    }
+
+    @if grid.$grid-push {
+        @each $grid-push-breakpoint in grid.$grid-push-breakpoints {
+            @include mixins.mq-at-least($grid-push-breakpoint) {
+                @include column-push($grid-push-breakpoint);
+            }
+        }
+    }
+}

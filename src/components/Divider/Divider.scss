@@ -1,0 +1,10 @@
+.c-divider {
+    width: 100%;
+    height: 2px;
+    margin: var(--spacer-lg) auto;
+    background-color: var(--color-on-background-border);
+
+    &.-width-small {
+        max-width: 40px;
+    }
+}

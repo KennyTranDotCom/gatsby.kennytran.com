@@ -1,0 +1,32 @@
+[
+    {
+        "name": "ShopTalk London",
+        "icon": "./clientLogos/shoptalklondon.svg",
+        "url": "https://shoptalklondon.com"
+    },
+    {
+        "name": "Nous",
+        "icon": "./clientLogos/nous.svg",
+        "url": "https://www.nous.partners"
+    },
+    {
+        "name": "entropy",
+        "icon": "./clientLogos/entropy.svg",
+        "url": "https://entropy.works"
+    },
+    {
+        "name": "Strathouse",
+        "icon": "./clientLogos/strathouse.svg",
+        "url": "https://www.strathouse.co.uk"
+    },
+    {
+        "name": "The Craft Irish Whiskey Co.",
+        "icon": "./clientLogos/the-craft-irish-whiskey-co.svg",
+        "url": "https://craftirishwhiskey.com"
+    },
+    {
+        "name": "Mable Therapy",
+        "icon": "./clientLogos/mable-therapy.svg",
+        "url": "https://www.mabletherapy.com"
+    }
+]

@@ -1,0 +1,34 @@
+/*******************************************************************************
+//
+//
+//
+//  #TABLE
+//
+//
+//
+*******************************************************************************/
+
+@use './src/assets/styles/_tools/_tools.functions' as functions;
+
+table {
+    border-bottom: 1px solid var(--color-on-background);
+    border-right: 1px solid var(--color-on-background);
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    overflow-x: auto;
+}
+
+th,
+td {
+    padding: functions.em(8px);
+    text-align: left;
+    border-top: 1px solid var(--color-on-background);
+    border-left: 1px solid var(--color-on-background);
+    vertical-align: middle;
+}
+
+caption {
+    padding: functions.em(8px);
+    border-bottom: 0;
+}

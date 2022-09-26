@@ -1,0 +1,17 @@
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+:root {
+    --main-spacer: var(--spacer-md);
+
+    @include mixins.mq-at-least(lg) {
+        --main-spacer: var(--spacer-lg);
+    }
+
+    @include mixins.mq-at-least(xl) {
+        --main-spacer: var(--spacer-xl);
+    }
+}
+
+.c-main {
+    padding-top: calc(var(--main-spacer) * 5);
+}

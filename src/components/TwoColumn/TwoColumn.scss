@@ -1,0 +1,30 @@
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+.c-split-lists {
+    position: relative;
+
+    .c-split-lists__col {
+        @include mixins.mq-at-least(md) {
+            display: flex;
+            justify-content: center;
+        }
+
+        &:last-child {
+            @include mixins.mq-at-least(md) {
+                padding-top: var(--spacer-5xl);
+            }
+        }
+    }
+
+    &::after {
+        @include mixins.mq-at-least(md) {
+            content: '';
+            width: 2px;
+            height: calc(100% + calc(var(--section-spacer) * 2));
+            position: absolute;
+            top: 0;
+            left: 50%;
+            background: var(--color-on-background-border);
+        }
+    }
+}

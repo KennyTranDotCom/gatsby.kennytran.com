@@ -1,0 +1,89 @@
+/*******************************************************************************
+//
+//
+//
+//  #BORDER
+//
+//
+//
+*******************************************************************************/
+
+@use './src/assets/styles/_settings/_settings.colors' as colors;
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+$border: true;
+$border-breakpoints: (xs, sm, md, lg, xl);
+
+@if $border {
+    @each $colorName, $color in colors.$colors {
+        .u-border-#{'' + $colorName} {
+            border: 1px solid $color !important;
+        }
+        .u-border-top-#{'' + $colorName} {
+            border-top: 1px solid $color !important;
+        }
+        .u-border-right-#{'' + $colorName} {
+            border-right: 1px solid $color !important;
+        }
+        .u-border-bottom-#{'' + $colorName} {
+            border-bottom: 1px solid $color !important;
+        }
+        .u-border-left-#{'' + $colorName} {
+            border-left: 1px solid $color !important;
+        }
+
+        .u-border-none {
+            border: none !important;
+        }
+        .u-border-top-none {
+            border-top: none !important;
+        }
+        .u-border-right-none {
+            border-right: none !important;
+        }
+        .u-border-bottom-none {
+            border-bottom: none !important;
+        }
+        .u-border-left-none {
+            border-left: none !important;
+        }
+    }
+
+    @each $border-breakpoint in $border-breakpoints {
+        @include mixins.mq-at-least($border-breakpoint) {
+            @each $colorName, $color in colors.$colors {
+                .#{$border-breakpoint}\:u-border-#{'' + $colorName} {
+                    border: 1px solid $color !important;
+                }
+                .#{$border-breakpoint}\:u-border-top-#{'' + $colorName} {
+                    border-top: 1px solid $color !important;
+                }
+                .#{$border-breakpoint}\:u-border-right-#{'' + $colorName} {
+                    border-right: 1px solid $color !important;
+                }
+                .#{$border-breakpoint}\:u-border-bottom-#{'' + $colorName} {
+                    border-bottom: 1px solid $color !important;
+                }
+                .#{$border-breakpoint}\:u-border-left-#{'' + $colorName} {
+                    border-left: 1px solid $color !important;
+                }
+
+                .#{$border-breakpoint}\:u-border-none {
+                    border: none !important;
+                }
+                .#{$border-breakpoint}\:u-border-top-none {
+                    border-top: none !important;
+                }
+                .#{$border-breakpoint}\:u-border-right-none {
+                    border-right: none !important;
+                }
+                .#{$border-breakpoint}\:u-border-bottom-none {
+                    border-bottom: none !important;
+                }
+                .#{$border-breakpoint}\:u-border-left-none {
+                    border-left: none !important;
+                }
+            }
+        }
+    }
+}

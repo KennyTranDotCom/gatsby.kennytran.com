@@ -1,0 +1,64 @@
+/*******************************************************************************
+//
+//
+//
+//  #DISPLAY
+//
+//
+//
+*******************************************************************************/
+
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+$display: true;
+$display-breakpoints: (xs, sm, md, lg, xl);
+
+@if $display {
+    .u-d-none {
+        display: none !important;
+    }
+    .u-d-block {
+        display: block !important;
+    }
+    .u-d-flex {
+        display: flex !important;
+    }
+    .u-d-inline {
+        display: inline !important;
+    }
+    .u-d-inline-block {
+        display: inline-block !important;
+    }
+    .u-d-inline-flex {
+        display: inline-flex !important;
+    }
+    .u-d-inline-table {
+        display: inline-table !important;
+    }
+
+    @each $display-breakpoint in $display-breakpoints {
+        @include mixins.mq-at-least($display-breakpoint) {
+            .#{$display-breakpoint}\:u-d-none {
+                display: none !important;
+            }
+            .#{$display-breakpoint}\:u-d-block {
+                display: block !important;
+            }
+            .#{$display-breakpoint}\:u-d-flex {
+                display: flex !important;
+            }
+            .#{$display-breakpoint}\:u-d-inline {
+                display: inline !important;
+            }
+            .#{$display-breakpoint}\:u-d-inline-block {
+                display: inline-block !important;
+            }
+            .#{$display-breakpoint}\:u-d-inline-flex {
+                display: inline-flex !important;
+            }
+            .#{$display-breakpoint}\:u-d-inline-table {
+                display: inline-table !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,90 @@
+/*******************************************************************************
+//
+//
+//
+//  #FOOTER
+//
+//
+//
+*******************************************************************************/
+
+@use 'sass:math';
+@use './src/assets/styles/_settings/_settings.grid' as grid;
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+.c-footer {
+    @include mixins.rem-fallback(padding-top, 60px);
+
+    overflow: hidden;
+
+    @include mixins.mq-at-least(md) {
+        @include mixins.rem-fallback(padding-top, 120px);
+
+        opacity: 0;
+    }
+
+    @include mixins.mq-at-least(xl) {
+        @include mixins.rem-fallback(padding-bottom, 120px);
+    }
+
+
+    .c-footer__box {
+        @include mixins.rem-fallback(
+            padding,
+            math.div(grid.$grid-gap, 2) 0
+        );
+
+        position: relative;
+
+        @include mixins.mq-at-least(sm) {
+            @include mixins.rem-fallback(
+                padding,
+                (grid.$grid-gap * 1.5) 0 grid.$grid-gap grid.$grid-gap
+            );
+        }
+
+        @include mixins.mq-at-least(md) {
+            @include mixins.rem-fallback(padding, 80px 0 80px 80px);
+        }
+
+        @include mixins.mq-at-least(xl) {
+            @include mixins.rem-fallback(padding-left, 180px);
+        }
+
+        &::after {
+            content: '';
+            width: 200vw;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: grid.$grid-gap * -1;
+            bottom: 0;
+            z-index: -1;
+            background: var(--color-secondary);
+
+            @include mixins.mq-at-least(sm) {
+                left: 0;
+            }
+
+            @include mixins.mq-at-least(xl) {
+                left: 100px;
+            }
+        }
+    }
+
+    .c-footer__form {
+        padding-bottom: 100px;
+        position: relative;
+
+        @include mixins.mq-at-least(md) {
+            padding-right: 100px;
+            padding-bottom: 70px;
+        }
+
+        .c-footer__form-button {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}

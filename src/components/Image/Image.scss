@@ -1,0 +1,29 @@
+.c-image {
+    position: relative;
+    overflow: hidden;
+
+    &,
+    img {
+        border-radius: 8px;
+    }
+
+    .c-image__mask-container {
+        transform: scale(1.05);
+        transition: transform 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    .c-image__background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: var(--color-background);
+    }
+
+    &:hover {
+        .c-image__mask-container {
+            transform: scale(1);
+        }
+    }
+}

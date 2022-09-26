@@ -1,0 +1,21 @@
+/*******************************************************************************
+//
+//
+//
+//  #BACKGROUND COLOR
+//
+//
+//
+*******************************************************************************/
+
+@use './src/assets/styles/_settings/_settings.colors' as colors;
+
+$background-color: true;
+
+@if $background-color {
+    @each $colorName, $color in colors.$colors {
+        .u-bgc-#{'' + $colorName} {
+            background-color: $color !important;
+        }
+    }
+}

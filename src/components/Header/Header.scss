@@ -1,0 +1,183 @@
+@use './src/assets/styles/_tools/tools.mixins' as mixins;
+
+.c-header {
+    padding: var(--spacer-base) 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: var(--z-index-header);
+
+    @include mixins.mq-at-least(md) {
+        padding: var(--spacer-lg) 0;
+        opacity: 0;
+        transform: translateY(50%);
+    }
+
+    .c-header__inner {
+        display: flex;
+        align-items: center;
+    }
+
+    .c-header__logo {
+        svg {
+            fill: var(--color-on-background);
+        }
+    }
+
+    .c-header__nav {
+        opacity: 1;
+        pointer-events: initial;
+
+        @include mixins.mq-at-least(md) {
+            margin-left: auto;
+        }
+
+        &[hidden] {
+            @include mixins.mq-until(md) {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            @include mixins.mq-at-least(md) {
+                display: block;
+            }
+        }
+    }
+
+    .c-header__menu {
+        display: flex;
+        align-items: center;
+        margin-left: 0;
+        list-style: none;
+
+        @include mixins.mq-until(md) {
+            flex-direction: column;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: var(--z-index-headerNav);
+            background: var(--color-primary);
+        }
+
+        @include mixins.mq-at-least(md) {
+            margin-left: auto;
+        }
+
+        li {
+            &:not(:last-child) {
+                @include mixins.mq-until(md) {
+                    margin-bottom: var(--spacer-md);
+                }
+
+                @include mixins.mq-at-least(md) {
+                    line-height: 20px;
+                    margin-right: var(--spacer-md);
+                }
+            }
+        }
+
+        a {
+            font-size: var(--font-md);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+
+            @include mixins.mq-at-least(md) {
+                font-size: var(--font-sm);
+            }
+
+            &[aria-current='page'] {
+                color: var(--color-accent);
+            }
+        }
+    }
+
+    .c-header__nav-trigger {
+        display: block;
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        margin-left: auto;
+        position: relative;
+        z-index: var(--z-index-headerTrigger);
+        text-indent: 150%;
+        background: none;
+        border: 1px solid var(--color-on-primary);
+        border-radius: 50%;
+        outline: 0;
+        overflow: hidden;
+        white-space: nowrap;
+
+        @include mixins.mq-at-least(md) {
+            display: none;
+        }
+
+        span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--color-on-primary);
+
+            &,
+            &:after,
+            &:before {
+                transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+            }
+
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                right: 0;
+                background: var(--color-on-primary);
+            }
+
+            &:after {
+                bottom: 8px;
+            }
+
+            &:before {
+                top: 8px;
+            }
+        }
+
+        &[aria\-expanded='true'] {
+            span {
+                background: rgba(0, 0, 0, 0);
+
+                &:after {
+                    width: 100%;
+                    bottom: 0;
+                    transform: rotate(-45deg);
+                    background: mvar(--color-on-primary);
+                }
+
+                &:before {
+                    width: 100%;
+                    top: 0;
+                    transform: rotate(45deg);
+                    background: var(--color-on-primary);
+                }
+            }
+        }
+    }
+
+    .c-header__cta {
+        display: none;
+
+        @include mixins.mq-at-least(md) {
+            display: block;
+            margin-left: var(--spacer-md);
+        }
+    }
+}

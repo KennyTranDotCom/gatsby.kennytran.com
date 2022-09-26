@@ -1,0 +1,35 @@
+@use './src/assets/styles/_settings/_settings.breakpoints.scss' as breakpoints;
+@use './src/assets/styles/_settings/_settings.colors.scss' as colors;
+@use './src/assets/styles/_settings/_settings.fonts.scss' as fonts;
+@use './src/assets/styles/_settings/_settings.spacers.scss' as spacers;
+@use './src/assets/styles/_settings/_settings.z-indexes.scss' as z-indexes;
+
+:root {
+    @each $breakpointName, $breakpoint in breakpoints.$breakpoints {
+        --breakpoint-#{"" + $breakpointName}: #{$breakpoint};
+    }
+
+    @each $colorName, $color in colors.$colors {
+        --color-#{"" + $colorName}: #{$color};
+    }
+
+    @each $colorName, $color in colors.$colors-theme-default {
+        --color-#{"" + $colorName}: #{$color};
+    }
+
+    @each $fontName, $font in fonts.$font-families {
+        --font-#{"" + $fontName}: #{$font};
+    }
+
+    @each $fontName, $font in fonts.$font-sizes {
+        --font-#{"" + $fontName}: #{$font};
+    }
+
+    @each $spacerName, $spacer in spacers.$spacers {
+        --spacer-#{"" + $spacerName}: #{$spacer};
+    }
+
+    @each $z-indexName, $z-index in z-indexes.$z-indexes {
+        --z-index-#{"" + $z-indexName}: #{$z-index};
+    }
+}

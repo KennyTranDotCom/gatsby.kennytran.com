@@ -1,0 +1,230 @@
+/*******************************************************************************
+//
+//
+//
+//  #FLEXBOX
+//
+//
+//
+*******************************************************************************/
+
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+$flexbox: true;
+$flexbox-breakpoints: (xs, sm, md, lg, xl);
+
+@if $flexbox {
+    .u-content-start {
+        align-content: flex-start !important;
+    }
+    .u-content-end {
+        align-content: flex-end !important;
+    }
+    .u-content-center {
+        align-content: center !important;
+    }
+    .u-content-between {
+        align-content: space-between !important;
+    }
+    .u-content-around {
+        align-content: space-around !important;
+    }
+    .u-content-stretch {
+        align-content: stretch !important;
+    }
+
+    .u-flex-column {
+        flex-direction: column !important;
+    }
+    .u-flex-row {
+        flex-direction: row !important;
+    }
+    .u-flex-wrap {
+        flex-wrap: wrap !important;
+    }
+    .u-flex-nowrap {
+        flex-wrap: nowrap !important;
+    }
+    .u-flex-wrap-reverse {
+        flex-wrap: wrap-reverse !important;
+    }
+    .u-flex-column-reverse {
+        flex-direction: column-reverse !important;
+    }
+    .u-flex-row-reverse {
+        flex-direction: row-reverse !important;
+    }
+
+    .u-flex-fill {
+        flex: 1 1 auto !important;
+    }
+    .u-flex-grow-0 {
+        flex-grow: 0 !important;
+    }
+    .u-flex-grow-1 {
+        flex-grow: 1 !important;
+    }
+    .u-flex-shrink-0 {
+        flex-shrink: 0 !important;
+    }
+    .u-flex-shrink-1 {
+        flex-shrink: 1 !important;
+    }
+
+    .u-items-start {
+        align-items: flex-start !important;
+    }
+    .u-items-end {
+        align-items: flex-end !important;
+    }
+    .u-items-center {
+        align-items: center !important;
+    }
+    .u-items-baseline {
+        align-items: baseline !important;
+    }
+    .u-items-stretch {
+        align-items: stretch !important;
+    }
+
+    .u-justify-start {
+        justify-content: flex-start !important;
+    }
+    .u-justify-end {
+        justify-content: flex-end !important;
+    }
+    .u-justify-center {
+        justify-content: center !important;
+    }
+    .u-justify-between {
+        justify-content: space-between !important;
+    }
+    .u-justify-around {
+        justify-content: space-around !important;
+    }
+
+    .u-self-start {
+        align-self: flex-start !important;
+    }
+    .u-self-end {
+        align-self: flex-end !important;
+    }
+    .u-self-center {
+        align-self: center !important;
+    }
+    .u-self-baseline {
+        align-self: baseline !important;
+    }
+    .u-self-stretch {
+        align-self: stretch !important;
+    }
+
+    @each $flexbox-breakpoint in $flexbox-breakpoints {
+        @include mixins.mq-at-least($flexbox-breakpoint) {
+            .#{$flexbox-breakpoint}\:u-content-start {
+                align-content: flex-start !important;
+            }
+            .#{$flexbox-breakpoint}\:u-content-end {
+                align-content: flex-end !important;
+            }
+            .#{$flexbox-breakpoint}\:u-content-center {
+                align-content: center !important;
+            }
+            .#{$flexbox-breakpoint}\:u-content-between {
+                align-content: space-between !important;
+            }
+            .#{$flexbox-breakpoint}\:u-content-around {
+                align-content: space-around !important;
+            }
+            .#{$flexbox-breakpoint}\:u-content-stretch {
+                align-content: stretch !important;
+            }
+
+            .#{$flexbox-breakpoint}\:u-flex-column {
+                flex-direction: column !important;
+            }
+            .#{$flexbox-breakpoint}\:u-flex-row {
+                flex-direction: row !important;
+            }
+            .#{$flexbox-breakpoint}\:u-flex-wrap {
+                flex-wrap: wrap !important;
+            }
+            .#{$flexbox-breakpoint}\:u-flex-nowrap {
+                flex-wrap: nowrap !important;
+            }
+            .#{$flexbox-breakpoint}\:u-flex-wrap-reverse {
+                flex-wrap: wrap-reverse !important;
+            }
+            .#{$flexbox-breakpoint}\:u-flex-column-reverse {
+                flex-direction: column-reverse !important;
+            }
+            .#{$flexbox-breakpoint}\:u-flex-row-reverse {
+                flex-direction: row-reverse !important;
+            }
+
+            .#{$flexbox-breakpoint}\:u-flex-fill {
+                flex: 1 1 auto !important;
+            }
+            .#{$flexbox-breakpoint}\:u-flex-grow-0 {
+                flex-grow: 0 !important;
+            }
+            .#{$flexbox-breakpoint}\:u-flex-grow-1 {
+                flex-grow: 1 !important;
+            }
+            .#{$flexbox-breakpoint}\:u-flex-shrink-0 {
+                flex-shrink: 0 !important;
+            }
+            .#{$flexbox-breakpoint}\:u-flex-shrink-1 {
+                flex-shrink: 1 !important;
+            }
+
+            .#{$flexbox-breakpoint}\:u-items-start {
+                align-items: flex-start !important;
+            }
+            .#{$flexbox-breakpoint}\:u-items-end {
+                align-items: flex-end !important;
+            }
+            .#{$flexbox-breakpoint}\:u-items-center {
+                align-items: center !important;
+            }
+            .#{$flexbox-breakpoint}\:u-items-baseline {
+                align-items: baseline !important;
+            }
+            .#{$flexbox-breakpoint}\:u-items-stretch {
+                align-items: stretch !important;
+            }
+
+            .#{$flexbox-breakpoint}\:u-justify-start {
+                justify-content: flex-start !important;
+            }
+            .#{$flexbox-breakpoint}\:u-justify-end {
+                justify-content: flex-end !important;
+            }
+            .#{$flexbox-breakpoint}\:u-justify-center {
+                justify-content: center !important;
+            }
+            .#{$flexbox-breakpoint}\:u-justify-between {
+                justify-content: space-between !important;
+            }
+            .#{$flexbox-breakpoint}\:u-justify-around {
+                justify-content: space-around !important;
+            }
+
+            .#{$flexbox-breakpoint}\:u-self-start {
+                align-self: flex-start !important;
+            }
+            .#{$flexbox-breakpoint}\:u-self-end {
+                align-self: flex-end !important;
+            }
+            .#{$flexbox-breakpoint}\:u-self-center {
+                align-self: center !important;
+            }
+            .#{$flexbox-breakpoint}\:u-self-baseline {
+                align-self: baseline !important;
+            }
+            .#{$flexbox-breakpoint}\:u-self-stretch {
+                align-self: stretch !important;
+            }
+        }
+    }
+}

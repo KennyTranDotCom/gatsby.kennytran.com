@@ -1,0 +1,28 @@
+/*******************************************************************************
+//
+//
+//
+//  #HTML
+//
+//
+//
+*******************************************************************************/
+
+@use './src/assets/styles/_settings/_settings.fonts' as fonts;
+
+* {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    min-height: 100%;
+    font-size: 100%;
+    line-height: fonts.$fonts-line-height-ratio-base;
+
+    &.is-disable-animations * {
+        transition: none !important;
+    }
+}

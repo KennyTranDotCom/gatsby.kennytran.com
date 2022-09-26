@@ -1,0 +1,23 @@
+/*******************************************************************************
+//
+//
+//
+//  #CLEAR
+//
+//
+//
+*******************************************************************************/
+
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+$clear: true;
+
+@if $clear {
+    .u-clear {
+        clear: both;
+    }
+
+    .u-clearfix {
+        @include mixins.clearfix();
+    }
+}

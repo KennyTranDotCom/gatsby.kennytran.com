@@ -1,0 +1,43 @@
+{
+    "timestamp": 1661535974269,
+    "hash": "efbf74b6ca175752197bbfff6fc9f709",
+    "assets": {
+        "/hello-world/": {
+            "/static/Inconsolata-Regular-db2c32784283f21171478c8e15d4fe08.woff2": true,
+            "/static/Inconsolata-Bold-5719493b9ee4ccb74d88182a0c884c26.woff2": true,
+            "/static/formulacondensed-bold-webfont-2a41dbdb81ac83123b0227a87f055b3d.woff2": true
+        },
+        "/dev-404-page/": {
+            "/static/formulacondensed-bold-webfont-2a41dbdb81ac83123b0227a87f055b3d.woff2": true,
+            "/static/formulacondensed-bold-webfont-185a0abd4f578d0fb9612f540aee96a0.woff": true,
+            "/static/Inconsolata-Regular-db2c32784283f21171478c8e15d4fe08.woff2": true,
+            "/static/Inconsolata-Regular-8384977b6e74bfaedbfc888df23faa8f.woff": true,
+            "/static/Inconsolata-Bold-5719493b9ee4ccb74d88182a0c884c26.woff2": true,
+            "/static/Inconsolata-Bold-78347c9d95b7ac7d43d908ca787bd914.woff": true
+        },
+        "/404/": {
+            "/static/formulacondensed-bold-webfont-2a41dbdb81ac83123b0227a87f055b3d.woff2": true,
+            "/static/formulacondensed-bold-webfont-185a0abd4f578d0fb9612f540aee96a0.woff": true,
+            "/static/Inconsolata-Regular-db2c32784283f21171478c8e15d4fe08.woff2": true,
+            "/static/Inconsolata-Regular-8384977b6e74bfaedbfc888df23faa8f.woff": true,
+            "/static/Inconsolata-Bold-5719493b9ee4ccb74d88182a0c884c26.woff2": true,
+            "/static/Inconsolata-Bold-78347c9d95b7ac7d43d908ca787bd914.woff": true
+        },
+        "/404.html": {
+            "/static/formulacondensed-bold-webfont-2a41dbdb81ac83123b0227a87f055b3d.woff2": true,
+            "/static/formulacondensed-bold-webfont-185a0abd4f578d0fb9612f540aee96a0.woff": true,
+            "/static/Inconsolata-Regular-db2c32784283f21171478c8e15d4fe08.woff2": true,
+            "/static/Inconsolata-Regular-8384977b6e74bfaedbfc888df23faa8f.woff": true,
+            "/static/Inconsolata-Bold-5719493b9ee4ccb74d88182a0c884c26.woff2": true,
+            "/static/Inconsolata-Bold-78347c9d95b7ac7d43d908ca787bd914.woff": true
+        },
+        "/": {
+            "/static/formulacondensed-bold-webfont-2a41dbdb81ac83123b0227a87f055b3d.woff2": true,
+            "/static/formulacondensed-bold-webfont-185a0abd4f578d0fb9612f540aee96a0.woff": true,
+            "/static/Inconsolata-Regular-db2c32784283f21171478c8e15d4fe08.woff2": true,
+            "/static/Inconsolata-Regular-8384977b6e74bfaedbfc888df23faa8f.woff": true,
+            "/static/Inconsolata-Bold-5719493b9ee4ccb74d88182a0c884c26.woff2": true,
+            "/static/Inconsolata-Bold-78347c9d95b7ac7d43d908ca787bd914.woff": true
+        }
+    }
+}

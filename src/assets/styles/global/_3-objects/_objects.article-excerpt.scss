@@ -1,0 +1,33 @@
+/*******************************************************************************
+//
+//
+//
+//  #ARTICLE
+//
+//
+//
+*******************************************************************************/
+
+@use './src/assets/styles/_settings/_settings.fonts' as fonts;
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+.o-article {
+    .o-article__date {
+        display: block;
+        margin-bottom: var(--spacer-xs);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .o-article__title {
+        font-size: var(--font-2xl);
+
+        @include mixins.mq-at-least(lg) {
+            font-size: var(--font-4xl);
+        }
+
+        @include mixins.mq-at-least(xl) {
+            font-size: var(--font-5xl);
+        }
+    }
+}

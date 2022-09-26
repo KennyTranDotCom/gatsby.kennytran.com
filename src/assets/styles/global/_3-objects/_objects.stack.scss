@@ -1,0 +1,57 @@
+/*******************************************************************************
+//
+//
+//
+//  #STACK
+//
+//
+//
+*******************************************************************************/
+
+@use './src/assets/styles/_settings/_settings.spacers' as spacers;
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+$stack-breakpoints: (xs, sm, md, lg, xl);
+
+.o-stack,
+%o-stack {
+    --space: var(--spacer-base);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    & > * {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        &:not(:last-child) {
+            margin-bottom: var(--space);
+        }
+    }
+}
+
+@each $size, $length in spacers.$spacers {
+    .o-stack--#{$size},
+    %o-stack--#{$size} {
+        & > * {
+            &:not(:last-child) {
+                margin-bottom: $length;
+            }
+        }
+    }
+}
+
+@each $stack-breakpoint in $stack-breakpoints {
+    @include mixins.mq-at-least($stack-breakpoint) {
+        @each $size, $length in spacers.$spacers {
+            .#{$stack-breakpoint}\:o-stack--#{$size} {
+                & > * {
+                    &:not(:last-child) {
+                        margin-bottom: $length;
+                    }
+                }
+            }
+        }
+    }
+}

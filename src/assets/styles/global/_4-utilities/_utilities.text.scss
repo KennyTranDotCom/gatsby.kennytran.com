@@ -1,0 +1,110 @@
+/*******************************************************************************
+//
+//
+//
+//  #TEXT
+//
+//
+//
+*******************************************************************************/
+
+@use './src/assets/styles/_settings/_settings.fonts' as fonts;
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+$text: true;
+$text-breakpoints: (xs, sm, md, lg, xl);
+
+@if $text {
+    .u-text-light {
+        font-weight: 300 !important;
+    }
+    .u-text-normal {
+        font-weight: 400 !important;
+    }
+    .u-text-bold {
+        font-weight: 700 !important;
+    }
+    .u-text-italic {
+        font-style: italic !important;
+    }
+
+    .u-text-justify {
+        text-align: justify !important;
+    }
+    .u-text-nowrap {
+        white-space: nowrap !important;
+    }
+
+    .u-text-capitalize {
+        text-transform: capitalize !important;
+    }
+    .u-text-lowercase {
+        text-transform: lowercase !important;
+    }
+    .u-text-uppercase {
+        text-transform: uppercase !important;
+    }
+
+    .u-text-center {
+        text-align: center !important;
+    }
+    .u-text-left {
+        text-align: left !important;
+    }
+    .u-text-right {
+        text-align: right !important;
+    }
+
+    .u-text-hide {
+        @include mixins.hide-text();
+    }
+
+    @each $fontFamilyName, $fontFamily in fonts.$font-families {
+        .u-text-#{$fontFamilyName},
+        %u-text-#{$fontFamilyName} {
+            font-family: $fontFamily;
+        }
+    }
+
+    @each $fontSizeName, $fontSize in fonts.$font-sizes {
+        .u-text-#{$fontSizeName},
+        %u-text-#{$fontSizeName} {
+            @include mixins.font-size($fontSize, false);
+        }
+    }
+
+    @each $fontLeadingName, $fontLeading in fonts.$font-leading {
+        .u-text-leading-#{$fontLeadingName},
+        %u-text-leading-#{$fontLeadingName} {
+            line-height: $fontLeading !important;
+        }
+    }
+
+    @each $text-breakpoint in $text-breakpoints {
+        @include mixins.mq-at-least($text-breakpoint) {
+            .#{$text-breakpoint}\:u-text-center {
+                text-align: center !important;
+            }
+            .#{$text-breakpoint}\:u-text-left {
+                text-align: left !important;
+            }
+            .#{$text-breakpoint}\:u-text-right {
+                text-align: right !important;
+            }
+
+            @each $fontSizeName, $fontSize in fonts.$font-sizes {
+                .#{$text-breakpoint}\:u-text-#{$fontSizeName},
+                %#{$text-breakpoint}\:u-text-#{$fontSizeName} {
+                    @include mixins.font-size($fontSize, false);
+                }
+            }
+
+            @each $fontLeadingName, $fontLeading in fonts.$font-leading {
+                .#{$text-breakpoint}\:u-text-leading-#{$fontLeadingName},
+                %#{$text-breakpoint}\:u-text-leading-#{$fontLeadingName} {
+                    line-height: $fontLeading !important;
+                }
+            }
+        }
+    }
+}

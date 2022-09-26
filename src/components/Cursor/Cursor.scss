@@ -1,0 +1,35 @@
+.c-cursor {
+    display: none;
+
+    @media (hover: hover) and (pointer: fine) {
+        display: block;
+    }
+
+    .c-cursor__pointer {
+        width: 8px;
+        height: 8px;
+        position: fixed;
+        top: -4px;
+        left: -4px;
+        border-radius: 50%;
+        z-index: 100;
+        background-color: var(--color-accent);
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .c-cursor__follow {
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        top: -20px;
+        left: -20px;
+        z-index: 100;
+        border-color: var(--color-accent);
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 1px;
+        pointer-events: none;
+        user-select: none;
+    }
+}

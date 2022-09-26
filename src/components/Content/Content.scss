@@ -1,0 +1,7 @@
+@use './src/assets/styles/_tools/tools.mixins' as mixins;
+
+.c-content {
+    @include mixins.mq-at-least(md) {
+        opacity: 0;
+    }
+}

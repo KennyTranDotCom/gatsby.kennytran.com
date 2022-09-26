@@ -1,0 +1,33 @@
+//******************************************************************************
+//
+//
+//
+//  #SPACERS
+//
+//  [1] https://www.modularscale.com/?24&px&1.3
+//
+//
+//******************************************************************************
+
+@use './src/assets/styles/_settings/_settings.fonts' as fonts;
+
+$spacers-base: fonts.$fonts-line-height-base;
+
+//[1]
+$spacers: (
+    none: 0,
+    5xs: 0.2 * $spacers-base,
+    4xs: 0.26 * $spacers-base,
+    3xs: 0.35 * $spacers-base,
+    2xs: 0.455 * $spacers-base,
+    xs: 0.592 * $spacers-base,
+    sm: 0.769 * $spacers-base,
+    base: 1 * $spacers-base,
+    md: 1.3 * $spacers-base,
+    lg: 1.69 * $spacers-base,
+    xl: 2.197 * $spacers-base,
+    2xl: 2.856 * $spacers-base,
+    3xl: 3.713 * $spacers-base,
+    4xl: 4.827 * $spacers-base,
+    5xl: 6.275 * $spacers-base,
+);

@@ -1,0 +1,5 @@
+.cache/
+*.code-workspace
+.env.*
+node_modules/
+public

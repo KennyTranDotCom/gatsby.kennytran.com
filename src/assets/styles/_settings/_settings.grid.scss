@@ -1,0 +1,27 @@
+//******************************************************************************
+//
+//
+//
+//  #GRID
+//
+//
+//
+//******************************************************************************
+
+$grid-fluid: true;
+
+$grid-columns: 12;
+$grid-column-width: 70px;
+$grid-gap: 70px;
+
+$grid-column: true;
+$grid-column-breakpoints: (xs, sm, md, lg, xl);
+
+$grid-offset: true;
+$grid-offset-breakpoints: (xs, sm, md, lg, xl);
+
+$grid-pull: false;
+$grid-pull-breakpoints: (xs, sm, md, lg, xl);
+
+$grid-push: false;
+$grid-push-breakpoints: (xs, sm, md, lg, xl);

@@ -1,0 +1,80 @@
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+:root {
+    --section-spacer: var(--spacer-md);
+
+    @include mixins.mq-at-least(lg) {
+        --section-spacer: var(--spacer-lg);
+    }
+
+    @include mixins.mq-at-least(xl) {
+        --section-spacer: var(--spacer-xl);
+    }
+}
+
+.c-section {
+    padding-top: var(--section-spacer);
+    padding-bottom: var(--section-spacer);
+
+    .c-section__inner {
+        transition: opacity 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.25s,
+            transform 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.25s;
+    }
+
+    &:first-child {
+        padding-top: 0;
+    }
+
+    &.-padding-top-wide {
+        padding-top: var(--section-spacer);
+        
+        @include mixins.mq-at-least(md) {
+            padding-top: calc(var(--section-spacer) * 2);
+        }
+    }
+
+    &.-padding-bottom-wide {
+        padding-bottom: var(--section-spacer);
+        
+        @include mixins.mq-at-least(md) {
+            padding-bottom: calc(var(--section-spacer) * 2);
+        }
+    }
+
+    .c-section__label {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: var(--spacer-lg);
+        color: var(--color-muted);
+        font-family: var(--font-inconsolata);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+
+        i {
+            margin-right: var(--spacer-4xs);
+        }
+
+        svg {
+            fill: var(--color-muted);
+        }
+
+        &.-right {
+            flex-direction: row-reverse;
+            margin-left: auto;
+
+            i {
+                margin-right: 0;
+                margin-left: var(--spacer-4xs);
+            }
+        }
+    }
+
+    html.is-dom-loading & {
+        .c-section__inner {
+            opacity: 0;
+            transform: translate(0, 48px);
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@use './src/assets/styles/_settings/settings.fonts' as fonts;
+@use './src/assets/styles/_tools/tools.mixins' as mixins;
+
+.c-jumbotron {
+    @include mixins.mq-at-least(md) {
+        opacity: 0;
+    }
+
+    .c-jumbotron__title {
+        @include fonts.font-heading;
+
+        font-size: 20vw;
+
+        @include mixins.mq-at-least(md) {
+            font-size: 14vw;
+        }
+    }
+}
+
+.line {
+    white-space: nowrap;
+
+    & > span {
+        margin-right: 2%;
+
+        &:nth-child(even) {
+            color: var(--color-grey);
+        }
+    }
+}

@@ -1,0 +1,59 @@
+/*******************************************************************************
+//
+//
+//
+//  #CONTAINER
+//
+//
+//
+*******************************************************************************/
+
+@use 'sass:math';
+
+@use './src/assets/styles/_settings/_settings.grid' as grid;
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+:root {
+    --container-spacing: #{math.div(grid.$grid-gap, 2)};
+    --container-max-width: 1680px;
+    --container-narrow-max-width: 960px;
+}
+
+@include mixins.mq-at-least(md) {
+    :root {
+        --container-spacing: #{grid.$grid-gap};
+    }
+}
+
+.o-container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-spacing);
+    padding-right: var(--container-spacing);
+
+    &--narrow {
+        max-width: var(--container-narrow-max-width);
+    }
+}
+
+@if grid.$grid-fluid == 'false' {
+    @media (min-width: 768px) {
+        .o-container {
+            width: 738px;
+        }
+    }
+
+    @media (min-width: 980px) {
+        .o-container {
+            width: 950px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .o-container {
+            width: 1170px;
+        }
+    }
+}

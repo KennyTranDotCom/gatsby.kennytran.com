@@ -1,0 +1,66 @@
+/*******************************************************************************
+//
+//
+//
+//  #BUTTON
+//
+//
+//
+*******************************************************************************/
+
+@use './src/assets/styles/_settings/_settings.fonts' as fonts;
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+.o-button-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 2.5rem 0.9rem;
+    position: relative;
+    z-index: 1;
+    color: var(--color-on-accent);
+    font-family: var(--font-formula);
+    font-size: var(--font-base);
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: var(--color-accent);
+        border-radius: 3rem;
+        transition: transform 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+        &::after {
+            transform: scale(0.9);
+        }
+    }
+
+    &.disabled,
+    &[disabled] {
+        cursor: default;
+        opacity: 0.5;
+    }
+
+    &.o-button-pill--secondary {
+        &::after {
+            background: none;
+            border: 2px solid var(--color-on-background);
+        }
+    }
+}

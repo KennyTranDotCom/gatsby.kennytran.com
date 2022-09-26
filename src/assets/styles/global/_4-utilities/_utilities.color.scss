@@ -1,0 +1,27 @@
+/*******************************************************************************
+//
+//
+//
+//  #COLOR
+//
+//
+//
+*******************************************************************************/
+
+@use './src/assets/styles/_settings/_settings.colors' as colors;
+
+$color: true;
+
+@if $color {
+    @each $colorName, $color in colors.$colors {
+        .u-c-#{'' + $colorName} {
+            color: var(--color-#{'' + $colorName}) !important;
+        }
+    }
+
+    @each $colorName, $color in colors.$colors-theme-default {
+        .u-c-#{'' + $colorName} {
+            color: var(--color-#{'' + $colorName}) !important;
+        }
+    }
+}

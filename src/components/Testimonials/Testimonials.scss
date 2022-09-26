@@ -1,0 +1,26 @@
+@use './src/assets/styles/_settings/settings.fonts' as fonts;
+@use './src/assets/styles/_tools/_tools.mixins' as mixins;
+
+.c-testimonials {
+    max-width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    list-style: none;
+
+    @include mixins.mq-at-least(md) {
+        text-align: center;
+    }
+
+    blockquote {
+        padding: 0;
+        border: 0;
+    }
+
+    .c-testimonials__quote {
+        margin-bottom: var(--spacer-base);
+    }
+
+    .c-testimonials__cite {
+        @include fonts.font-heading;
+    }
+}
