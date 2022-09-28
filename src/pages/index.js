@@ -359,7 +359,7 @@ const PageHome = ({ data, mount, transitionStatus, ...props }) => {
                                         CSS / Sass
                                     </li>
                                     <li className="h2 u-text-xl u-text-leading-base md:u-text-2xl">
-                                        JavaScript
+                                        JavaScript / ES6
                                     </li>
                                     <li className="h2 u-text-xl u-text-leading-base md:u-text-2xl">
                                         PHP
