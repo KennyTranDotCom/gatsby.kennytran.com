@@ -74,6 +74,14 @@ const Header = (props) => {
                             <ul className="c-header__menu">
                                 <li>
                                     <TransitionLink
+                                        to="/work"
+                                        entry={entryTransition}
+                                    >
+                                        Work
+                                    </TransitionLink>
+                                </li>
+                                <li>
+                                    <TransitionLink
                                         to="/about"
                                         entry={entryTransition}
                                     >
