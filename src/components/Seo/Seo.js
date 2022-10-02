@@ -33,6 +33,8 @@ const Seo = ({ article, date, description, home, image, title }) => {
                     : `${seo.title} • ${defaultTitle}`}
             </title>
 
+            {seo.url && <link rel="canonical" href={seo.url} />}
+
             <meta name="description" content={seo.description} />
 
             <meta name="image" content={seo.image} />
