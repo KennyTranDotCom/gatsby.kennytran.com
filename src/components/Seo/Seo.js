@@ -39,6 +39,8 @@ const Seo = ({ article, date, description, home, image, title }) => {
 
             <meta name="image" content={seo.image} />
 
+            <meta property="og:site_name" content={defaultTitle} />
+
             {seo.url && <meta property="og:url" content={seo.url} />}
 
             {article ? (
