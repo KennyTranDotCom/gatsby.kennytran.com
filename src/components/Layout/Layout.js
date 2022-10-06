@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Script } from "gatsby"
 import PropTypes from 'prop-types';
 import Lenis from '@studio-freight/lenis';
 
@@ -28,16 +29,19 @@ const Layout = ({ children, isHomePage, path }) => {
     });
 
     return (
-        <div data-is-root-path={isHomePage}>
-            <Header />
+        <>
+            <Script id="script-tawk-to">{`var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src='https://embed.tawk.to/633ea59e37898912e96d2a89/1gembdt29';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();`}</Script>
+            <div data-is-root-path={isHomePage}>
+                <Header />
 
-            <Main>{children}</Main>
+                <Main>{children}</Main>
 
-            <Footer />
+                <Footer />
 
-            <Cursor path={path} />
-            <ToastContainer />
-        </div>
+                <Cursor path={path} />
+                <ToastContainer />
+            </div>
+        </>
     );
 };
 
